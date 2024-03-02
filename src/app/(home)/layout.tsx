@@ -5,17 +5,18 @@ import amazonas from "../../../public/images/amazonas.png";
 import andina from "../../../public/images/andina.png";
 import caribe from "../../../public/images/caribe.png";
 import pacifico from "../../../public/images/pacifico.png";
-import { useRouter } from "next/navigation";
+import orinoquia from "../../../public/images/orinoquia.png";
+import { useRouter, usePathname } from "next/navigation";
 
 const Pagelayout = ({ children }: { children: React.ReactNode }) => {
   const [bgSrc, setbgSrc] = useState(amazonas);
   const router = useRouter();
-  const path = window.location.pathname;
+  const path = usePathname();
   const locations = [
     { name: "Caribe", path: "caribe" },
     { name: "Pacífico", path: "pacifico" },
     { name: "Andina", path: "andina" },
-    { name: "Orinoquia", path: "orinoquia" },
+    { name: "Orinoquía", path: "orinoquia" },
     { name: "Amazonas", path: "amazonas" },
   ];
   useEffect(() => {
@@ -26,6 +27,15 @@ const Pagelayout = ({ children }: { children: React.ReactNode }) => {
         break;
       case "/caribe":
         setbgSrc(caribe);
+        break;
+      case "/andina":
+        setbgSrc(andina);
+        break;
+      case "/amazonas":
+        setbgSrc(amazonas);
+        break;
+      case "/orinoquia":
+        setbgSrc(orinoquia);
         break;
       default:
         break;
@@ -70,10 +80,10 @@ const Pagelayout = ({ children }: { children: React.ReactNode }) => {
               {locations.map((location) => (
                 <li
                   onClick={() => router.push(`/${location.path}`)}
-                  className="flex cursor-pointer flex-col items-center justify-center"
+                  className="flex cursor-pointer group flex-col items-center justify-center"
                 >
-                  <span className="icon-[mdi--circle] text-[35px] hover:animate-spin text-[#FFD522]"></span>
-                  <p className="text-white">{location.name}</p>
+                  <span className={`icon-[mdi--circle] text-[35px] ${`/${location.path}` === path ? '-translate-y-[14px]' : ''} group-hover:-translate-y-[14px] transition-transform duration-300  text-[#FFD522]`}></span>
+                  <p className={`text-white group-hover:-translate-y-[13px] ${`/${location.path}`=== path ? '-translate-y-[17px]' : ''} transition-transform duration-700`}>{location.name}</p>
                 </li>
               ))}
             </ul>

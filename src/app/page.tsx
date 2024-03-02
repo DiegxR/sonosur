@@ -3,14 +3,14 @@ import Image from "next/image";
 import bg from "../../public/images/amazonas.png";
 import { useRouter } from "next/navigation";
 const locations = [
-  { name: "Caribe", path: 'caribe' },
-  { name: "Pacífico", path: 'pacifico' },
-  { name: "Andina", path: 'andina' },
-  { name: "Orinoquia", path: 'orinoquia' },
-  { name: "Amazonas", path: 'amazonas' },
+  { name: "Caribe", path: "caribe" },
+  { name: "Pacífico", path: "pacifico" },
+  { name: "Andina", path: "andina" },
+  { name: "Orinoquia", path: "orinoquia" },
+  { name: "Amazonas", path: "amazonas" },
 ];
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <section className="w-full h-[100%]  ">
@@ -60,9 +60,7 @@ export default function Home() {
           </section>
         </section>
       </section>
-      <section className="p-[10%] h-[50vh] w-full bg-[#0F1B27]">
-        
-      </section>
+      <section className="p-[10%] h-[50vh] w-full bg-[#0F1B27]"></section>
     </>
   );
 }
