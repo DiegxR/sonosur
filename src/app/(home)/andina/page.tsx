@@ -7,9 +7,21 @@ const page = () => {
   const { setTrack } = useTrack();
   const tracks = [
     {
-      name: "Ropa al viento",
-      path: "1.FL_Movimiento de ropas por el viento.mp3",
+      name: "Llanto de perro",
+      path: "26.FL_Perrollorando.mp3",
     },   
+    {
+      name: "Destapar lata",
+      path: "27.FL_Abrirlata.mp3",
+    },  
+    {
+      name: "Aerosol pintando",
+      path: "28.Aerosol pintando.mp3",
+    },  
+    {
+      name: "Besos",
+      path: "29.FL_Besos.mp3",
+    },  
   ];
   return (
     <section className="justify-around flex">

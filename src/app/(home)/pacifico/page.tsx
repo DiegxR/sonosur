@@ -7,8 +7,20 @@ const page = () => {
   const { setTrack } = useTrack();
   const tracks = [
     {
-      name: "Ropa al viento",
-      path: "1.FL_Movimiento de ropas por el viento.mp3",
+      name: "Mar",
+      path: "15.FL_Mar.mp3",
+    },
+    {
+      name: "Río",
+      path: "16.FL_Rio.mp3",
+    },
+    {
+      name: "Tarros, pila de reciclaje",
+      path: "19.FL_Tarros, pila de reciclaje.mp3",
+    },
+    {
+      name: "Nadar",
+      path: "20.FL_Nadar.mp3",
     },
   ];
   return (

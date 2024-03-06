@@ -83,8 +83,21 @@ const Pagelayout = ({ children }: { children: React.ReactNode }) => {
       <section className="py-[5%] h-[50vh] w-full bg-[#0F1B27]">
         <div>{children}</div>
       </section>
-      <footer className="h-[10vh]">Footer</footer>
       <div className="fixed left-0 bottom-0 w-full">{AudioRender}</div>
+      <footer className="flex flex-col gap-[40px] h-[35vh] pb-[125px] p-10 pl-[120px] bg-[0A131C]">
+        <div className="logo">
+        <Image
+              width={140}
+              height={70}
+              src="/images/Logo sono sur.png"
+              alt=""
+            />
+        </div>
+        <div className="contacto">
+          <span><p className="text-[#ffe159]">Contáctanos / Medellín- SanBuenaAventura/ Cra. 35 Este # 19-223</p></span>
+          <span></span>
+        </div>
+      </footer>
     </>
   );
 };
