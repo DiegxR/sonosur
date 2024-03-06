@@ -6,11 +6,13 @@ import andina from "../../../public/images/andina.png";
 import caribe from "../../../public/images/caribe.png";
 import pacifico from "../../../public/images/pacifico.png";
 import orinoquia from "../../../public/images/orinoquia.png";
-import { useRouter, usePathname } from "next/navigation";
+import {  usePathname } from "next/navigation";
+import { useTrack } from "@/context/TracksContext";
+import StatesChanger from "@/components/StatesChanger";
 
 const Pagelayout = ({ children }: { children: React.ReactNode }) => {
+  const {  AudioRender } = useTrack();
   const [bgSrc, setbgSrc] = useState(amazonas);
-  const router = useRouter();
   const path = usePathname();
   const locations = [
     { name: "Caribe", path: "caribe" },
@@ -53,7 +55,7 @@ const Pagelayout = ({ children }: { children: React.ReactNode }) => {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             width: "100%",
-            height: "70vh",
+            height: "85vh",
           }}
         >
           <div>
@@ -75,25 +77,14 @@ const Pagelayout = ({ children }: { children: React.ReactNode }) => {
               </div>
             </article>
           </div>
-          <section className="relative">
-            <ul className="flex absolute -top-[17px] w-full justify-between">
-              {locations.map((location) => (
-                <li
-                  onClick={() => router.push(`/${location.path}`)}
-                  className="flex cursor-pointer group flex-col items-center justify-center"
-                >
-                  <span className={`icon-[mdi--circle] text-[35px] ${`/${location.path}` === path ? '-translate-y-[14px]' : ''} group-hover:-translate-y-[14px] transition-transform duration-300  text-[#FFD522]`}></span>
-                  <p className={`text-white group-hover:-translate-y-[13px] ${`/${location.path}`=== path ? '-translate-y-[17px]' : ''} transition-transform duration-700`}>{location.name}</p>
-                </li>
-              ))}
-            </ul>
-            <div className="border-t-[2.4px]   border-white"></div>
-          </section>
+          <StatesChanger/>
         </section>
       </section>
-      <section className="p-[10%] h-[50vh] w-full bg-[#0F1B27]">
-        {children}
+      <section className="py-[5%] h-[50vh] w-full bg-[#0F1B27]">
+        <div>{children}</div>
       </section>
+      <footer className="h-[10vh]">Footer</footer>
+      <div className="fixed left-0 bottom-0 w-full">{AudioRender}</div>
     </>
   );
 };

@@ -31,3 +31,27 @@ body {
     text-wrap: balance;
   }
 }
+.audioTracker {
+  width: 100%;
+  height: 40px; /* Ancho al 100% */ /* Fondo negro */
+  color: greenyellow; /* Color del texto (puedes ajustarlo según tus necesidades) */
+  /* Otros estilos personalizados para los controles del reproductor de audio */
+}
+
+/* Estilos para los controles específicos del reproductor de audio */
+.audioTracker::-webkit-media-controls-panel {
+  /* Estilos específicos para los controles en navegadores webkit (Chrome, Safari) */
+  background: #0f1b27;
+  border: #0f1b27;
+  outline: #0f1b27;
+  color: white;
+  width: 100%;
+}
+.audioTracker::-webkit-media-controls-play-button {
+  -webkit-background-origin: padding-box;
+}
+.audioTracker::-webkit-media-controls-time-remaining-display,
+.audioTracker::-webkit-media-controls-current-time-display {
+  color: rgb(255, 255, 255);
+  /* Cambia el color de los botones a blanco */
+}
